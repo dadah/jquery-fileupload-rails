@@ -571,10 +571,10 @@
             fileUploadButtonBar.find('.delete')
                 .bind('click.' + ns, function (e) {
                     e.preventDefault();
-                    filesList.find('.delete input:checked')
+                    if(confirm('Are you sure?')) {
+                      filesList.find('.delete input:checked')
                         .siblings('button').click();
-                    fileUploadButtonBar.find('.toggle')
-                        .prop('checked', false);
+                    }
                 });
             fileUploadButtonBar.find('.toggle')
                 .bind('change.' + ns, function (e) {
